@@ -4,7 +4,7 @@ This is a fork/copy from https://github.com/leeliu/dbench
 
 Benchmark Kubernetes persistent disk volumes with `fio`: Read/write IOPS, bandwidth MB/s and latency.
 
-# Usage
+## Usage
 
 1. Download [dbench.yaml](https://gitlab.stolenleadsmen.com/infrastructure/containers/dbench/-/raw/dbench.yaml?ref_type=heads&inline=false)
    and edit the `storageClassName` to match your Kubernetes provider's Storage Class `kubectl get storageclasses`
@@ -15,7 +15,8 @@ Benchmark Kubernetes persistent disk volumes with `fio`: Read/write IOPS, bandwi
     * currently there are 9 tests, 15s per test - total runtime is ~2.5 minutes
 4. Follow benchmarking progress using: `kubectl logs -f job/dbench` (empty output means the Job not yet created, or `storageClassName` is invalid, see Troubleshooting below)
 5. At the end of all tests, you'll see a summary that looks similar to this:
-```
+
+```text
 ==================
 = Dbench Summary =
 ==================
@@ -24,6 +25,7 @@ Average Latency (usec) Read/Write: 183.07/76.91
 Sequential Read/Write: 536MiB/s / 512MiB/s
 Mixed Random Read/Write IOPS: 43.1k/14.4k
 ```
+
 1. Once the tests are finished, clean up using: `kubectl delete -f fbench.yaml` and that should deprovision the persistent disk and delete it to minimize storage billing.
 
 ```yaml
@@ -109,10 +111,10 @@ podman run -it --entrypoint="" localhost/dbench /bin/ash
 
 ## Contributors
 
-* Lee Liu (LogDNA)
+* [Michael Mansell](https://github.com/mmansell83)
+* [Lee Liu (LogDNA)](https://github.com/leeliu)
 * [Alexis Turpin](https://github.com/alexis-turpin)
 * [Kiran Mova](https://github.com/kmova)
-* [Michael Mansell](https://github.com/mmansell83)
 
 ## License
 
