@@ -1,5 +1,5 @@
 # FROM dmonakhov/alpine-fio
-FROM docker.io/library/alpine:3.24.0@sha256:8ddefa941e689fc29abcdeb8dae3b3c6d139cc08ce9a52633931160701770685
+FROM docker.io/library/alpine:3.24.1@sha256:28bd5fe8b56d1bd048e5babf5b10710ebe0bae67db86916198a6eec434943f8b
 
 LABEL org.opencontainers.image.authors="lee@logdna.com,michael.mansell@gmail.com"
 
